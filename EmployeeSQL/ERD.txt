@@ -1,0 +1,34 @@
+departments
+-----------
+dept_no pk varchar
+dept_name varchar
+
+employees
+-----------
+emp_no pk integer
+emp_title_id  varchar
+birth_date  date
+first_name  varchar
+last_name  varchar
+sex  varchar
+hire_date date
+
+dept_emp 
+------------
+emp_no integer FK >- employees.emp_no
+dept_no varchar FK >- departments.dept_no
+
+dept_manager
+-------------
+dept_no varchar FK >- departments.dept_no
+emp_no integer FK >- employees.emp_no
+
+titles
+-------------
+title_id pk varchar FK >- employees.emp_title_id
+title varchar
+
+salaries
+------------
+emp_no integer FK >- employees.emp_no
+salary integer
